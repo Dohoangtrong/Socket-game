@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  flex-direction: row;
+  height: 95vh;
+  background-color: #f4f4f3;
+}
+  
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+  
+#game {
+  background-color: lightblue;
+  border: 2px solid black;
+  margin-left: 50px;
+  margin-top: 35px; 
+}
+  
+#playerCount {
+  width: 100%;
+  text-align: center;
+}
+  
+#scores {
+  width: 100%;
+  text-align: center;
+}
+  
+#header {
+  position: fixed;
+  width: 120%;
+  text-align: center;
+  font-size: xx-large;
+  top: 0;
+  left: 0; 
+  z-index: 1000; 
+}
