@@ -13,6 +13,12 @@ $(function () {
     document.getElementById('playerCount').innerHTML = String(playerCount) + " knight" + (playerCount > 1 ? 's' : '') + " on the battle"
   }
 
+  function drawPlayers(players) {
+    Object.keys(players).forEach((playerId) => {
+      let player = players[playerId]
+    })
+  }
+
   $('html').keydown(function(e) {
     switch(e.key){
       case "w":
@@ -57,6 +63,7 @@ $(function () {
     updateGameState({players: players})
     Object.keys(players).forEach((playerId) => {
       let player = players[playerId]
+      movePlayer(playerId)
     })
   }
 

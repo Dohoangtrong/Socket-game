@@ -24,8 +24,28 @@ function setupSocket(io) {
             updateInterval = setInterval(emitUpdates, 40)
         }
 
+        var posX = 20
+        var posY = 20
+        // while (!engine.isValidPosition({ x: posX, y: posY }, socket.id)) {
+        //     posX = Math.floor(Math.random() * Number(engine.gameSize) - 100) + 20
+        //     posY = Math.floor(Math.random() * Number(engine.gameSize) - 100) + 20
+        // }
+
         engine.players[socket.id] = {
-            name: knight.knightName()
+            name: knight.knightName(),
+            x: posX,
+            y: posY,
+            veloc:{
+                x: 0,
+                y: 0
+            },
+            accel:{
+                x: 0,
+                y: 0
+            },
+            colour: engine.stringToColour(socket.id),
+            score: 0,
+            angle: 0,
         };
 
         socket.on('disconnect', () => {
@@ -39,6 +59,7 @@ function setupSocket(io) {
         });
 
         socket.on('up', function(msg){
+            
         });
     
         socket.on('down', function(msg) {
